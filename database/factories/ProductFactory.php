@@ -17,12 +17,9 @@ $factory->define(Product::class, function (Faker $faker) {
         'price' => random_int(500000,1000000),
         'promotion_price' => random_int(0,200),
         'image' => 'image/'.random_int(1,26).'.jpg',
-        'category_id' => rand(1,Category::count()),
-        'acce_id' => rand(1,ProductAcce::count()),
-        'nawing_id' => rand(1,ProductNawing::count()),
-        'type_id' => rand(1,ProductType::count()),
-
-
-
+        'category_id' => random_int(1,Category::count()),
+        'acce_id' => random_int(1,ProductAcce::count()),
+        'nawing_id' => random_int(1,ProductNawing::count()),
+        'type_id' => random_int(1,ProductType::count())
     ];
 });
