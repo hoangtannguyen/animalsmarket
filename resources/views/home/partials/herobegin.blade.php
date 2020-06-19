@@ -33,16 +33,16 @@
                             <i class="fa fa-phone"></i>
                         </div>
                         <div class="hero__search__phone__text">
-                            <h5 ><a class="text-dark" href="./contact.html">LIÊN HỆ</a></h5>
-                            <span>093.195.1945</span>
+                            <h5 ><a class="text-dark" href="{{ route('contact') }}">LIÊN HỆ</a></h5>
+                            <span>012.345.6879</span>
                         </div>
                     </div>
                 </div>
                 <div class="hero__item set-bg" data-setbg="img/b1.jpg">
                     <div class="hero__text">
-                        <span class="text-warning">Nguyen Hoang Pet</span>
-                        <h2 class="text-danger">Aligator Snapping <br />100% Amazzon</h2>
-                        <p class="text-warning">97 Ngô Đức Kế - Phường Thuận Lộc - Tỉnh Thừa Thiên Huế</p>
+                        <span class="text-success">Nguyen Hoang Pet</span>
+                        <h2 class="text-success">Aligator Snapping <br />100% Amazzon</h2>
+                        <p class="text-success">97 Ngô Đức Kế - Phường Thuận Lộc - Tỉnh Thừa Thiên Huế</p>
                         <a href="" class="btn btn-warning">Cửa Hàng</a>
                     </div>
                 </div>

@@ -7,7 +7,7 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="shoping__cart__table" id="cart12">
-                        <table id="cart123">
+                        <table id="cart13">
                             <thead>
                                 <tr>
                                     <th class="shoping__product">Sản phẩm</th>
@@ -18,7 +18,7 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach (Cart::getContent()  as $product)
+                                @foreach (Cart::getContent()  as $item => $product)
                                 <tr>
                                     <td class="shoping__cart__item">
                                         <img src="{{ $product->attributes->img }}" style="width:100px;height:100px" alt="">
@@ -29,14 +29,14 @@
                                     </td>
                                     <td class="shoping__cart__quantity">
                                         <div class="quantity">
-                                            <div class="pro-qty">
+                                            <div>
                                                  <input
-                                                {{-- data-url="{{ route('cart.update',$product->id) }}"
+                                                data-url="{{ route('cart.update',$product->id) }}"
                                                 data-id="{{ $product->id }}"
                                                 data-token="{{ csrf_token() }}" type="number"
                                                 value="{{  Cart::get($product->id)->quantity }}"
                                                 onchange="updateCart(this)"
-                                                class="btn btn-outline-dark" min="1" max="200" id="quantity{{ $item }}"> --}}
+                                                class="btn btn-outline-dark" min="1" max="200" id="quantity{{ $item }}">
                                             </div>
                                         </div>
                                     </td>
@@ -70,18 +70,16 @@
                                                 'quantity': $(btn).val()
                                             },
                                             success: function(){
-                                                // $(`#quantity${id}`).load(` #quantity${id}`);
-                                                // $(`#total${id}`).load(` #total${id}`);
-                                                // $('#cart12').load(' #cart13');
-                                                location.reload();
+                                                $(`#quantity${id}`).load(` #quantity${id}`);
+                                                $(`#total${id}`).load(` #total${id}`);
+                                                $('#cart12').load(' #cart13');
+                                                // location.reload();
 
                                             },
                                             error: function(){
                                                 alert('error');
                                             }
                                         });
-
-
                                      }
 
                                 </script>
@@ -123,6 +121,7 @@
         </div>
     </section>
     <!-- Shoping Cart Section End -->
+
 
 
 @endsection

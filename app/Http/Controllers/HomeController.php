@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Product;
 class HomeController extends Controller
 {
+
+
+
     public function index(){
         $bosats = Product::where('category_id',1)->paginate(8);
         $gamnhams = Product::where('category_id',2)->paginate(8);

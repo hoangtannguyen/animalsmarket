@@ -6,6 +6,8 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.css" integrity="sha256-He3QEBKoL/nMXlVsoM7S2C2kjFQqS5L+mgA+F8LpG+U=" crossorigin="anonymous" />
+{{-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script> --}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.min.js" integrity="sha256-7OUNnq6tbF4510dkZHCRccvQfRlV3lPpBTJEljINxao=" crossorigin="anonymous"></script>
 
 
  <!-- Content Wrapper. Contains page content -->
@@ -180,7 +182,14 @@
   <!-- /.content-wrapper -->
 
 
+
   @if(session()->has('success'))
+
+  <input type="hidden" id="success" value="1">
+
+  @endif
+  
+  {{-- @if(session()->has('success'))
   <script >
 $.toast({
     heading: 'Success',
@@ -191,9 +200,26 @@ $.toast({
 
 })
   </script>
-  @endif
-
+  @endif --}}
 
 
 @endsection
+
+@push('js')
+<script>
+window.onload = function(){
+    if ($('#success').val()) {
+        Swal.fire({
+            position: 'top-center',
+            icon: 'success',
+            title: 'Your work has been saved',
+            showConfirmButton: false,
+            timer: 2000
+        })
+    }
+}
+
+</script>
+
+@endpush
 

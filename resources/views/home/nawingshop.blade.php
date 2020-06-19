@@ -188,7 +188,7 @@
                         @foreach ($loaign  as $gn)
                         <div class="col-lg-4 col-md-6 col-sm-6">
                             <div class="product__item">
-                                <div class="product__item__pic set-bg" data-setbg="img/{{ $gn->image }}">
+                                <div class="product__item__pic set-bg" data-setbg="{{ $gn->image }}" style="width:265px;height:170px">
                                     <ul class="product__item__pic__hover">
                                         <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                         <li><a href="#"><i class="fa fa-retweet"></i></a></li>
@@ -217,7 +217,7 @@
                 @foreach ( $lienquan as $lq)
                 <div class="col-lg-3 col-md-4 col-sm-6">
                     <div class="product__item">
-                        <div class="product__item__pic set-bg" data-setbg="img/{{ $lq->image }}">
+                        <div class="product__item__pic set-bg" data-setbg="{{ $lq->image }}" style="width:200px;height:170px">
                             <ul class="product__item__pic__hover">
                                 <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                 <li><a href="#"><i class="fa fa-retweet"></i></a></li>

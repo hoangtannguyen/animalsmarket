@@ -25,7 +25,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-       view()->composer('home.partials.herobegin',function($view){
+
+    view()->composer('home.partials.herobegin',function($view){
             $types = ProductType::all();
             $view->with('types',$types);
        });
@@ -34,6 +35,11 @@ class AppServiceProvider extends ServiceProvider
         $types = ProductType::all();
         $view->with('types',$types);
    });
+
+   view()->composer('home.partials.copyhero',function($view){
+    $types = ProductType::all();
+    $view->with('types',$types);
+});
 
 
      view()->composer('home.partials.header',function($view){

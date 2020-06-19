@@ -6,9 +6,12 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-toast-plugin/1.3.2/jquery.toast.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.css" integrity="sha256-He3QEBKoL/nMXlVsoM7S2C2kjFQqS5L+mgA+F8LpG+U=" crossorigin="anonymous" />
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+
 
 
 <body class="hold-transition sidebar-mini">
+
 <!-- Site wrapper -->
 <div class="wrapper">
  <!-- Content Wrapper. Contains page content -->
@@ -37,16 +40,16 @@
       <div class="card">
         <div class="card-header">
           <h3 class="card-title">
-        {{-- <a class="btn btn-primary btn-sm" href="{{ route('product.create') }}">
+        <a class="btn btn-primary btn-sm" href="{{ route('product.create') }}">
             <i class="fas fa-plus-circle">
             </i>
             Thêm
-        </a> --}}
+        </a>
 
-        <a class="btn btn-primary btn-sm" onclick="Cr.create()" style="color:white">
+        {{-- <a class="btn btn-primary btn-sm" onclick="Cr.create()" style="color:white">
             <i class="fas fa-folder">
             </i> Create
-        </a>  
+        </a>   --}}
     </h3>
           <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
@@ -278,7 +281,23 @@
 
 </body>
 
+
 @if(session()->has('success'))
+  <script >
+Swal.fire({
+  position: 'top-start',
+  icon: 'success',
+  title: 'Your work has been saved',
+  showConfirmButton: false,
+  timer: 2000
+})
+  </script>
+  @endif
+
+
+
+
+{{-- @if(session()->has('success'))
   <script >
 $.toast({
     heading: '#',
@@ -289,7 +308,7 @@ $.toast({
 
 })
   </script>
-  @endif
+  @endif --}}
 
 
 

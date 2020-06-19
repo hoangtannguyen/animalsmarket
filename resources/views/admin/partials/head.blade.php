@@ -32,3 +32,4 @@
   <!-- Toastr -->
   <link rel="stylesheet" href="plugins/toastr/toastr.min.css">
 
+  @stack('ajax')

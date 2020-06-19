@@ -12,3 +12,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.4/toastr.min.js" integrity="sha256-yNbKY1y6h2rbVcQtf0b8lq4a+xpktyFc3pSYoGAY1qQ=" crossorigin="anonymous"></script>
 
 @stack('index-toastr')
+{{-- <script src="{{ asset('js/cart.js') }}"></script> --}}
+
+

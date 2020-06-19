@@ -40,6 +40,17 @@ class CartController extends Controller
         return back()->with('success',"The shopping cart has successfully beed added to the shopping cart!");;
     }
 
+    public function update(Request $request)
+    {
+        // $quantity = ['quantity'=> $request->quantity];
+        $quantity = ['quantity' => array(
+            'relative' => false,
+            'value' => $request->quantity
+        )];
+        Cart::update($request->id, $quantity);
+
+    }
+
 
     public function remove($id){
             Cart::remove($id);
@@ -85,7 +96,7 @@ class CartController extends Controller
         $bill->customer_id = $customer->id;
         $bill->date_order = date('Y-m-d H:i:s');
         $bill->total = Cart::getSubTotal();
-        $bill->paymentx = $request->paymentMethod;
+        $bill->payment = $request->paymentMethod;
         $bill->save();
 
        foreach (Cart::getContent('items') as $key => $product) {
