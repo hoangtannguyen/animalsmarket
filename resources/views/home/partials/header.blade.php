@@ -31,7 +31,7 @@
         <div class="row">
             <div class="col-lg-3">
                 <div class="header__logo">
-                    <a href="{{ route('home.index') }}" style="font-size:20px;color:green"  class="lead font-italic"><img src="img/257.jpg" style="width:119px;height:50px" alt="" >G-TURTLE</a>
+                    <a href="{{ route('index.index') }}" style="font-size:20px;color:green"  class="lead font-italic"><img src="img/257.jpg" style="width:119px;height:50px" alt="" >G-TURTLE</a>
                 </div>
             </div>
             <div class="col-lg-6">

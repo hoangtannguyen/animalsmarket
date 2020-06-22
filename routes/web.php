@@ -19,12 +19,12 @@ Auth::routes();
  Route::get('/logout', '\App\Http\Controllers\Auth\LoginController@logout')->name('logout1');
 // table home
 
-Route::get('/', 'HomeController@index')->name('home.index');
-Route::get('loaibs/{id}', 'HomeController@loaibosat')->name('loaibs');
-Route::get('loaign/{id}', 'HomeController@loaigamnham')->name('loaign');
-Route::get('loaipk/{id}', 'HomeController@loaiphukien')->name('loaipk');
-Route::get('chitiet/{id}', 'HomeController@chitiet')->name('ct');
-Route::get('contact', 'HomeController@contact')->name('contact');
+Route::get('/', 'IndexController@index')->name('index.index');
+Route::get('loaibs/{id}', 'IndexController@loaibosat')->name('loaibs');
+Route::get('loaign/{id}', 'IndexController@loaigamnham')->name('loaign');
+Route::get('loaipk/{id}', 'IndexController@loaiphukien')->name('loaipk');
+Route::get('chitiet/{id}', 'IndexController@chitiet')->name('ct');
+Route::get('contact', 'IndexController@contact')->name('contact');
 
 // table cart
 
@@ -61,8 +61,3 @@ Route::resource('customer', 'CustomerController');
 
 Route::view('admin','admin.partials.dashboard');
 
-
-
-
-
-Route::view('admin1','layouts.app');
